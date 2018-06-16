@@ -1,0 +1,82 @@
+Gender,Age,Nationality,Symptom1,Symptom2,Symptom3,Symptom4,Symptom5,Symptom6,Symptom7,Predicted_Disease
+M,20,Indian,Chills,Headache,Nausea,Vomiting,Diarrhea,Muscle Pain,Convulsions,Malaria
+F,25,Indian,Fever,Vomiting,Abdominal Pain,Headache,Bloody Stools,Anemia,Muscle Pain,Malaria
+F,42,Chinese,Nausea,Anemia,Convulsions,Muscle Pain,Chills,Headache,Sweating,Malaria
+M,41,Singaporean,Bloody Stools,Muscle Pain,Anemia,Diarrhea,Vomiting,Nausea,Headache,Malaria
+M,39,Indian,Chills,Abdominal Pain,Anemia,Convulsions,Coma,Muscle Pain,Diarrhea,Malaria
+M,35,Indian,,Muscle Pain,Convulsions,Nausea,Vomiting,Sweating,Fever,Malaria
+F,36,Chinese,Sweating,Bloody Stools,Headache,Muscle Pain,,,Anemia,Malaria
+F,38,Chinese,Chills,Headache,Nausea,Vomiting,Diarrhea,Anemia,Muscle Pain,Malaria
+F,37,Chinese,Bloody Stools,Muscle Pain,Anemia,Diarrhea,Vomiting,Nausea,Headache,Malaria
+M,36,Chinese,Sweating,Chills,Convulsions,Bloody Stools,,,Muscle Pain,Malaria
+F,18,Chinese,Fever,Rash,Joint Pain,Conjunctivitis,Muscle Pain,Eye Pain,Vomiting,Zika
+F,20,Singaporean,Vomiting,Eye Pain,Headache,Muscle Pain,Conjunctivitis,Joint Pain,Rash,Zika
+F,25,Indian,Headache,Vomiting,Eye Pain,Muscle Pain,Joint Pain,Rash,Fever,Zika
+M,28,Indian,Fever,Joint Pain,Red Eyes,Headache,Eye Pain,Vomiting,Muscle Pain,Zika
+M,30,Chinese,Headache,,Red Eyes,,Vomiting,Muscle Pain,Rash,Zika
+F,35,Chinese,Rash,Red Eyes,Eye Pain,Vomiting,,Joint Pain,Muscle Pain,Zika
+M,36,Chinese,Muscle Pain,Joint Pain,Eye Pain,Vomiting,Rash,Red Eyes,Fever,Zika
+F,24,Singaporean,Fever,Rash,Joint Pain,Conjunctivitis,Muscle Pain,Headache,Eye Pain,Zika
+F,20,Singaporean,Rash,Joint Pain,Red Eyes,Muscle Pain,Eye Pain,Vomiting,Headache,Zika
+M,15,Singaporean,Red Eyes,,Joint Pain,Muscle Pain,,,,Zika
+M,51,Chinese,Vomiting,Red Eyes,Eye Pain,Rash,Headache,,,Zika
+F,20,China,Fever ,Headache,Joint Pain,Muscle Pain,Skin rashes,Vomiting,,Dengue virus
+M,21,China,Headache,Fatigue,Muscle Pain,Skin rashes,Nausea ,,Vomiting,Dengue virus
+M,22,China,Gum Bleeding,Joint Pain,Fever ,Headache,Skin rashes,Nausea ,,Dengue virus
+F,23,China,Muscle Pain,,Bleeding of the nose,Vomiting,Headache,Skin rashes,,Dengue virus
+M,24,Kenya,Gum Bleeding,Bleeding of the nose,Muscle Pain,Fever ,Joint Pain,Headache,,Dengue virus
+F,25,Brazil,Vomiting,,Fatigue,Joint Pain,,,Skin rashes,Dengue virus
+M,26,Taiwan,Fever ,,Vomiting,,Joint Pain,Headache,Muscle Pain,Dengue virus
+F,27,Brazil,Bleeding of the nose,,Gum Bleeding,,Nausea ,Headache,Fever ,Dengue virus
+M,28,India,Nausea ,Fever ,Skin rashes,Headache,,Bleeding of the nose,,Dengue virus
+M,29,India,Fatigue,Nausea ,Vomiting,,Fever ,Muscle Pain,,Dengue virus
+F,30,Kenya,Vomiting,,Muscle Pain,Nausea ,Headache,Joint Pain,,Dengue virus
+M,31,Kenya,Gum Bleeding,Muscle Pain,Vomiting,,Joint Pain,Skin rashes,Nausea ,Dengue virus
+M,32,India,Muscle Pain,,,Joint Pain,Vomiting,Fever ,,Dengue virus
+M,33,Kenya,Gum Bleeding,Joint Pain,Vomiting,Skin rashes,Muscle Pain,Nausea ,,Dengue virus
+M,34,Kenya,Gum Bleeding,Skin rashes,Joint Pain,,Headache,Fever ,,Dengue virus
+M,35,India,Gum Bleeding,Joint Pain,Gum Bleeding,,Vomiting,,Skin rashes,Dengue virus
+M,36,Thailand,Bleeding of the nose,,Vomiting,Joint Pain,Muscle Pain,,Nausea ,Dengue virus
+F,37,Thailand,Vomiting,Muscle Pain,,,Joint Pain,Skin rashes,,Dengue virus
+M,38,India,Nausea ,,Muscle Pain,Fatigue,Skin rashes,Headache,,Dengue virus
+M,39,Kenya,,,Bleeding of the nose,Vomiting,Headache,Skin rashes,,Dengue virus
+F,40,Kenya,Gum Bleeding,Bleeding of the nose,Muscle Pain,Fever ,Joint Pain,Headache,,Dengue virus
+M,41,Kenya,Vomiting,,Fatigue,Joint Pain,,,Skin rashes,Dengue virus
+M,42,Kenya,Fever ,,Vomiting,,Joint Pain,Headache,Muscle Pain,Dengue virus
+F,43,India,Bleeding of the nose,,Gum Bleeding,,Nausea ,Headache,Fever ,Dengue virus
+M,44,India,Nausea ,Fever ,Skin rashes,Headache,,Bleeding of the nose,,Dengue virus
+F,45,India,Fatigue,Nausea ,Vomiting,,Fever ,Muscle Pain,,Dengue virus
+M,46,India,Vomiting,,Muscle Pain,Nausea ,Headache,Joint Pain,,Dengue virus
+F,47,India,Gum Bleeding,Muscle Pain,Vomiting,,Joint Pain,Skin rashes,Nausea ,Dengue virus
+F,48,India,Muscle Pain,,,Joint Pain,Vomiting,Fever ,,Dengue virus
+F,49,India,Gum Bleeding,Joint Pain,Vomiting,Skin rashes,Muscle Pain,Nausea ,,Dengue virus
+F,50,India,Gum Bleeding,Skin rashes,Joint Pain,,Headache,Fever ,,Dengue virus
+M,51,India,Gum Bleeding,Joint Pain,Gum Bleeding,,Vomiting,,Skin rashes,Dengue virus
+F,52,India,Bleeding of the nose,,Vomiting,Joint Pain,Muscle Pain,,Nausea ,Dengue virus
+M,53,India,Vomiting,Muscle Pain,,,Joint Pain,Skin rashes,,Dengue virus
+M,20,Indian,sore throat,runny nose,cough,diarrhea,vomiting,body ache,fever,Viral fever
+F,6,Chinese,runny nose,sore throat,cough,diarrhea,vomiting,body ache,fever,Viral fever
+F,18,Malay,cough,runny nose,sore throat,diarrhea,vomiting,body ache,fever,Viral fever
+F,44,Indonesian,diarrhea,cough,runny nose,sore throat,vomiting,body ache,fever,Viral fever
+F,39,Indian,vomiting,diarrhea,cough,runny nose,sore throat,body ache,fever,Viral fever
+M,25,Indian,body ache,vomiting,diarrhea,cough,runny nose,sore throat,fever,Viral fever
+M,21,Malay,fever,body ache,vomiting,diarrhea,cough,runny nose,sore throat,Viral fever
+F,38,Chinese,sore throat,fever,body ache,vomiting,diarrhea,cough,runny nose,Viral fever
+M,2,Chinese,sore throat,runny nose,fever,body ache,vomiting,diarrhea,cough,Viral fever
+M,10,Chinese,sore throat,runny nose,cough,fever,body ache,vomiting,diarrhea,Viral fever
+F,15,Malay,sore throat,runny nose,cough,diarrhea,fever,body ache,vomiting,Viral fever
+M,26,Malay,sore throat,runny nose,cough,diarrhea,vomiting,fever,body ache,Viral fever
+F,21,Indonesian,sore throat,runny nose,cough,diarrhea,vomiting,body ache,fever,Viral fever
+M,24,Indonesian,poor appetite,abdominal pain,headache,body ache,diarrhea,lethargy,fever,Typhoid
+F,14,Indian,abdominal pain,poor appetite,headache,body ache,diarrhea,lethargy,fever,Typhoid
+F,17,Indonesian,headache,abdominal pain,poor appetite,body ache,diarrhea,lethargy,fever,Typhoid
+F,31,Chinese,body ache,headache,abdominal pain,poor appetite,diarrhea,lethargy,fever,Typhoid
+F,50,Chinese,diarrhea,body ache,headache,abdominal pain,poor appetite,lethargy,fever,Typhoid
+M,4,Malay,lethargy,diarrhea,body ache,headache,abdominal pain,poor appetite,fever,Typhoid
+M,33,Malay,fever,lethargy,diarrhea,body ache,headache,abdominal pain,poor appetite,Typhoid
+F,26,Chinese,poor appetite,fever,lethargy,diarrhea,body ache,headache,abdominal pain,Typhoid
+M,31,Chinese,poor appetite,abdominal pain,fever,lethargy,diarrhea,body ache,headache,Typhoid
+M,48,Malay,poor appetite,abdominal pain,headache,fever,lethargy,diarrhea,body ache,Typhoid
+F,29,Indian,poor appetite,abdominal pain,headache,body ache,fever,lethargy,diarrhea,Typhoid
+M,18,Indonesian,poor appetite,abdominal pain,headache,body ache,diarrhea,fever,lethargy,Typhoid
+F,27,Chinese,poor appetite,abdominal pain,headache,body ache,diarrhea,lethargy,fever,Typhoid
