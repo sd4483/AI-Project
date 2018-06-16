@@ -26,5 +26,7 @@ X.Symptom7 = X.Symptom7.fillna('Not defined')
 
 encode_gender=pd.get_dummies(X['Gender'], prefix='Gender')
 encode_nationality = pd.get_dummies(X['Nationality'], prefix = 'Nationality')
-encode_symptom1
-encode_synptom2
+encode_symptom7 = pd.get_dummies(X['Symptoms7'], prefix = 'Symptom7')
+encode_symptom6 = pd.get_dummies(X['Symptoms6'], prefix = 'Symptom6')
+encode_symptom5 = pd.get_dummies(X['Symptoms5'], prefix = 'Symptom5')
+
