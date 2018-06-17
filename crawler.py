@@ -10,8 +10,8 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 dataset = pd.read_csv('data.csv')
-X = dataset.iloc[:,:-1]
-y = dataset.iloc[:,-1]
+X = dataset.iloc[:,:-1].values
+y = dataset.iloc[:,-1].values
 
 X_missing_values = X.isnull().sum()
 X.Symptom1 = X.Symptom1.fillna('Not defined')
@@ -35,4 +35,14 @@ encode_symptom6 = pd.get_dummies(X['Symptom6'], prefix = 'Symptom6')
 encode_symptom5 = pd.get_dummies(X['Symptom5'], prefix = 'Symptom5')
 encode_disease = pd.get_dummies(y['Predicted_Disease'], prefix = 'Predicted_Disease')
 
-pd.concat()
+#Encoding Categorical data
+from sklearn.preprocessing import LabelEncoder, OneHotEncoder           #importing LabelEncoder and OneHotEncoder class from preprocessing lib in scikit
+
+labelencoder_x = LabelEncoder()    #Encoding the categorical values with numbers in the first column
+X[:, 0,2,3,4,5,6,7,8,9] = labelencoder_x.fit_transform(X[:, 0,2,3,4,5,6,7,8,9])
+onehotencoder = OneHotEncoder(categorical_features = [0])               #Further diving the categorical values into 3 groups to eliminate order between the values
+X = onehotencoder.fit_transform(X).toarray()
+
+labelencoder_purchased = LabelEncoder()                                 #doing the same thing for dependent variable
+y = labelencoder_purchased.fit_transform(Y)
+
