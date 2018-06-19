@@ -2,7 +2,9 @@
 # coding: utf-8
 
 # In[1]:
-
+from flask import Flask, redirect, url_for, request, render_template, jsonify
+from bs4 import BeautifulSoup as bs
+import requests
 
 import nltk
 from nltk.tokenize import word_tokenize
@@ -10,9 +12,18 @@ import random
 import numpy as np
 from textblob import TextBlob
 
+app = Flask(__name__)
 
 # In[2]:
 
+
+
+counter = 0
+counter1 = 0
+counter2 = 0
+counter3 = 0
+counter4 = 0
+match =[]
 
 GREETING_KEYWORDS = ("hello", "hi", "greetings", "hey", "whazzup")
 
@@ -24,7 +35,7 @@ SYMPTOM2_KEYWORDS = ("chills", "headache", "nausea", "vomiting", "diarrhea", "mu
 SYMPTOM3_KEYWORDS = ("fever", "rash", "joint", "pain", "conjuctivitis", "muscle", "pain", "eye", "pain", "vomiting", "red", "eyes")
 SYMPTOM4_KEYWORDS = ("sore", "throat", "runny", "nose", "cough", "fever", "body", "ache", "poor", "appetite", "abdominal", "pain", "diarrhea", "body", "ache", "vomiting")
 SYMPTOM5_KEYWORDS = ("poor", "appetite", "headache", "body", "ache", "abdominal", "pain", "lethargy", "diarrhea")
-SYMPTOMS_RESPONSES = ["the patient is likely to suffer from Dengue virus", "the patient is likely to suffer from malaria", "this patient is likely to suffer from zika", "this patient is likely to suffer from viral fever", "this patient is likely to suffer from typhoid"]
+SYMPTOMS_RESPONSES = ["You are likely to suffer from Dengue virus", "you are likely to suffer from malaria", "you are likely to suffer from zika", "you are likely to suffer from viral fever", "you are likely to suffer from typhoid"]
 
 
 # In[3]:
@@ -166,18 +177,29 @@ def symptoms(keywords, counter, counter1, counter2, counter3, counter4,match):
             counter4 +=1
     match.append(counter4)
 
+    while(len(set(keywords)&set(SYMPTOM1_KEYWORDS)) is 0 and
+            len(set(keywords)&set(SYMPTOM2_KEYWORDS)) is  0 and
+            len(set(keywords)&set(SYMPTOM3_KEYWORDS)) is 0 and
+            len(set(keywords)&set(SYMPTOM4_KEYWORDS)) is 0 and
+            len(set(keywords)&set(SYMPTOM5_KEYWORDS)) is 0 ):
+                return "Tell a valid symptom"
+                
+
     values = np.array(match)
     searchval = max(match)
     i = np.where(values == searchval)[0]
 
     if (len(i)>1):
+        return "do you have anymore symptoms?"
+         
+        """
         question = input('bot : Do you have anymore symptoms?')
         if (question =='yes'):
             question = input("bot : what are the other symptoms?")
             question = question.replace(',', ' ')
             localKey = question.split(' ')
             while(len(set(localKey)&set(SYMPTOM1_KEYWORDS)) is 0 and
-            len(set(localKey)&set(SYMPTOM2_KEYWORDS)) is 0 and
+            len(set(localKey)&set(SYMPTOM2_KEYWORDS)) is  0 and
             len(set(localKey)&set(SYMPTOM3_KEYWORDS)) is 0 and
             len(set(localKey)&set(SYMPTOM4_KEYWORDS)) is 0 and
             len(set(localKey)&set(SYMPTOM5_KEYWORDS)) is 0 ):
@@ -190,9 +212,10 @@ def symptoms(keywords, counter, counter1, counter2, counter3, counter4,match):
             symptoms(keywords, counter, counter1, counter2, counter3, counter4, match =[])
         elif(question == 'no'):
                 print('bot : Please go for general check up')
+        """
     else:
         for elements in i:
-            print('bot : ',SYMPTOMS_RESPONSES[elements])
+            return SYMPTOMS_RESPONSES[elements]
 
 
 
@@ -312,33 +335,78 @@ def respond(ques):
 
 # In[ ]:
 
+@app.route('/hi')
+def loadPage():
 
-question = input('Good day, I am a recption assistant. How may I help you today?  ')
+    #return jsonify(items=[dict(a="one", b="two"), dict(c=3, d=4)], forecasts=[dict(a=1, b=2), dict(c=3, d=4)])
 
-while question != "bye bye":
-    if ('emergency' in question):
-        print('Calling emergency doctor..')
-        break
-    elif ('sick' in question or 'doctor' in question or 'not feeling well' in question or 'MC' in question):
-        question = input('What are the symptoms of your sickness?')
-        question = question.replace(',', ' ')
-        keywords = question.split(' ')
-        counter = 0
-        counter1 = 0
-        counter2 = 0
-        counter3 = 0
-        counter4 = 0
-        match =[]
-        symptoms(keywords, counter, counter1, counter2, counter3, counter4, match = [])
-        break
-              
-    else:
-        answer = respond(question)
-        print ('bot : ', answer)
-        print ('')  
-        question = input('say something : ')
-        
+    return jsonify(items=[dict(a="one", message ='Good day, I am a reception assistant. How may I help you today?')])
+
+@app.route('/sick', methods=['GET'])
+def sick():
+    return jsonify(items=[dict(a="one", message ='What are the symptoms of your sickness?')])
+
+
+@app.route('/symptoms/<string:name>', methods=['GET'])
+def symptom(name):
+    question = name
+    question = question.replace('_', ' ')
+    keywords = question.split(' ')
+    a = symptoms(keywords, counter, counter1, counter2, counter3, counter4, match =[])
+    return jsonify(items=[dict(a="one", message =a)],match = match)
+
+
+
+
+@app.route('/more_symp/<string:name>', methods=['GET'])
+def more_symp(name):
+    if (name.lower() == 'yes'):
+        return jsonify(items=[dict(a="one", message ="What are the other symptoms?")])
+    elif (name.lower() == 'no'):
+        return jsonify(items=[dict(a="one", message ="Please go for general check up")])
+
     
+@app.route('/other_symp/<string:name>', methods=['GET'])
+def other_symp(name):
+    if (name.lower() == 'yes'):
+        return jsonify(items=[dict(a="one", message ="What are the other symptoms?")])
+    elif (name.lower() == 'no'):
+        return jsonify(items=[dict(a="one", message ="Please go for general check up")])
+
+
+
+            #symptoms(keywords, counter, counter1, counter2, counter3, counter4, match = [])
+
+    """
+    question = input('Good day, I am a recption assistant. How may I help you today?  ')
+
+    while question != "bye bye":
+        if ('emergency' in question):
+            print('Calling emergency doctor..')
+            break
+        elif ('sick' in question or 'doctor' in question or 'not feeling well' in question or 'MC' in question):
+            question = input('What are the symptoms of your sickness?')
+            question = question.replace(',', ' ')
+            keywords = question.split(' ')
+            counter = 0
+            counter1 = 0
+            counter2 = 0
+            counter3 = 0
+            counter4 = 0
+            match =[]
+            symptoms(keywords, counter, counter1, counter2, counter3, counter4, match = [])
+            break
+                
+        else:
+            answer = respond(question)
+            print ('bot : ', answer)
+            print ('')  
+            question = input('say something : ')
+    
+    """
+if __name__ == '__main__':
+    app.run(debug=True)
+
 #print ("Hope I served you well")
 
 
